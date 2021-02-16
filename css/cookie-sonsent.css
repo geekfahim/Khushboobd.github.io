@@ -1,0 +1,174 @@
+.cc_banner-wrapper {
+    z-index: 9001;
+    position: relative;
+}
+
+.cc_container {
+    background: #000000;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.cc_container .cc_btn {
+    font-family: 'brandon-grotesque', sans-serif;
+    background-color: #fff;
+    padding: 10px 39px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 900;
+    color: #203140;
+    cursor: pointer;
+    float: right;
+    text-transform: uppercase;
+}
+
+.cc_container .center_holder {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.cc_container .center_holder .cc_icon,
+.cc_container .center_holder .cc_message,
+.cc_container .center_holder .cc_btn_holder {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.cc_container .center_holder .cc_icon {
+    width: 62px;
+}
+
+.cc_container .center_holder .cc_btn_holder {
+    width: 140px;
+}
+
+.cc_container .center_holder .cc_icon .icon-info {
+    border: 1px solid #fff;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    font-size: 15px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.cc_container .cc_btn:visited,
+.cc_container .cc_btn:hover,
+.cc_container .cc_btn:active {
+    color: #203140;
+}
+
+.cc_container a,
+.cc_container .cc_message {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: 700;
+    transition: font-size 200ms;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 767px) {
+    .cc_container .cc_btn {
+        padding: 5px 20px;
+        font-size: 12px;
+    }
+
+    .cc_container .cc_message {
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .cc_container .center_holder .cc_icon {
+        width: 47px;
+    }
+
+    .cc_container .center_holder .cc_btn_holder {
+        width: 100px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .cc_container {
+        padding: 15px 0;
+    }
+
+    .cc_container .cc_btn {
+        padding: 5px 20px;
+        font-size: 14px;
+    }
+
+    .cc_container .cc_message {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media print {
+    .cc_banner-wrapper,
+    .cc_container {
+        display: none
+    }
+}
+
+@-webkit-keyframes slideUp {
+    0% {
+        -webkit-transform: translateY(66px);
+        transform: translateY(66px)
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        -webkit-transform: translateY(66px);
+        -ms-transform: translateY(66px);
+        transform: translateY(66px)
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+.cc_container,
+.cc_message,
+.cc_btn {
+    animation-duration: 0.8s;
+    -webkit-animation-duration: 0.8s;
+    -moz-animation-duration: 0.8s;
+    -o-animation-duration: 0.8s;
+    -webkit-animation-name: slideUp;
+    animation-name: slideUp
+}
+
+.icon-info{
+    font-size: 14px;
+}
+
+.cc-outer-line{
+    text-align: center;
+}
+
+.cc-line {
+    border-bottom: 1px solid #ffffff;
+    display: inline-block;
+    width: 29px;
+}

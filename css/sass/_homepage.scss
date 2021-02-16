@@ -1,0 +1,2647 @@
+/* Homepage styles
+-------------------------------------------------------------- */
+footer .made-in{
+    font-family: liebedorisbold, sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000;
+    opacity: .5;
+
+    display: none;
+}
+
+.home_main {
+    background-color: #ffffff;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .fixed_menu{
+        height: 1px;
+
+        .clear{
+            height: 1px;
+        }
+    }
+
+    footer .agro,
+    footer .inovation-of-the-year{
+        display: block;
+
+        &.lang-en,
+        &.lang-it{
+            display: none;
+        }
+    }
+
+    footer .made-in{
+        display: block;
+        position: absolute;
+        //right: 25px;
+        //bottom: 62px;
+        right: 4px;
+        bottom: 55px;
+
+
+        &.lang-en,
+        &.lang-it{
+            display: none;
+        }
+    }
+
+    .home_dots_overlay {
+        background: transparent url('../images/home_dots.svg') repeat center center;
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        opacity: 0;
+        background-position: 37px 26px;
+    }
+
+    .product_circle {
+        //background-size: contain;
+        //position: absolute;
+        //top: 0;
+        //left: 29%;
+        //margin-top: 10vh;
+        //height: 80vh;
+        //width: 44%;
+        //z-index: 500;
+        //pointer-events: none;
+
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        left: 25%;
+        margin-top: 8.5vh;
+        height: 80vh;
+        width: 50%;
+        z-index: 500;
+        pointer-events: none;
+        text-align: center;
+        opacity: 0;
+
+        .outer_circle {
+            display: table;
+            width: 100%;
+            height: 100%;
+
+            .inner_circle {
+                display: table-cell;
+                width: 100%;
+                vertical-align: middle;
+
+                .image_holder {
+                    position: relative;
+                    display: inline-block;
+                    max-width: 100%;
+                    width: 85%;
+
+                    img {
+                        max-width: 100%;
+                        width: 100%;
+                    }
+
+                    .product_circle_link {
+                        position: absolute;
+                        z-index: 550;
+                        pointer-events: auto;
+                        width: 90px;
+                        height: 82px;
+
+                        &:hover{
+                            .product_circle_svg{
+                                transform: scale(0.8) rotate(60deg);
+                                -webkit-backface-visibility: hidden;
+                                //opacity: 0;
+                            }
+                        }
+
+                        &.active{
+                            .product_circle_svg{
+                                transform: scale(0);
+                                -webkit-backface-visibility: hidden;
+                                //opacity: 0;
+                            }
+
+                            .link span{
+                                transform: scale(1);
+                                -webkit-backface-visibility: hidden;
+                            }
+
+                            .link .front_image{
+                                opacity: 1;
+                                -webkit-transition: opacity 250ms 175ms;
+                                -moz-transition: opacity 250ms 175ms;
+                                -o-transition: opacity 250ms 175ms;
+                                transition: opacity 250ms 175ms;
+                            }
+
+                            .link {
+                                -webkit-transition: transform 250ms, opacity 50ms 25ms;
+                                -moz-transition: transform 250ms, opacity 50ms 25ms;
+                                -o-transition: transform 250ms, opacity 50ms 25ms;
+                                transition: transform 250ms, opacity 50ms 25ms;
+                            }
+                        }
+
+                        .product_circle_svg{
+                            height: 90px;
+                            opacity: 1;
+                            transform: scale(1);
+                            transition: transform 250ms;
+                            cursor: pointer;
+                        }
+
+                        .back_image {
+                            position: absolute;
+                            top: 4px;
+                            left: -4px;
+                            display: inline-block;
+                            width: 90px;
+                            height: 82px;
+                            z-index: 700;
+
+                            .back_circle{
+                                width: 54px;
+                                height: 54px;
+                                border-radius: 100%;
+                                background-color: #1e1e1e;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translateX(-41%) translateY(-50%);
+                            }
+
+                            svg {
+                                -webkit-transform: rotate(-90deg);
+                                transform: rotate(-90deg);
+                                position: relative;
+                                top: -2px;
+                                left: 3px;
+                            }
+
+                            .circle_animation {
+                                stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
+                                stroke-dashoffset: 440;
+                                transition: stroke-dashoffset 1s linear;
+                            }
+
+                            .circle_animation2 {
+                                stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
+                                stroke-dashoffset: 0;
+                            }
+                        }
+
+                        .front_image {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: inline-block;
+                            text-align: center;
+                            width: 90px;
+                            height: 90px;
+                            line-height: 90px;
+                            z-index: 800;
+                            opacity: 0;
+                            -webkit-transition: opacity 200ms;
+                            -moz-transition: opacity 200ms;
+                            -o-transition: opacity 200ms;
+                            transition: opacity 200ms;
+
+                            img {
+                                max-width: 50px;
+                                //max-width: 30px;
+                                max-height: 40px;
+                                width: 50px;
+                                height: 40px;
+                            }
+                        }
+
+                        .link {
+                            display: inline-block;
+                            z-index: 1200;
+                            -webkit-transition: transform 250ms, opacity 50ms 100ms;
+                            -moz-transition: transform 250ms, opacity 50ms 100ms;
+                            -o-transition: transform 250ms, opacity 50ms 100ms;
+                            transition: transform 250ms, opacity 50ms 100ms;
+                            width: 90px;
+                            height: 82px;
+                            @include opacity(0);
+                            //pointer-events: none;
+                            z-index: -1;
+
+                            span{
+                                transform: scale(0);
+                                -webkit-transition: transform 250ms;
+                                -moz-transition: transform 250ms;
+                                -o-transition: transform 250ms;
+                                transition: transform 250ms;
+                            }
+                        }
+
+                        .text {
+                            position: absolute;
+                            font-family: liebedorisbold, sans-serif;
+                            //display: inline-block;
+                            font-size: 22px;
+                            line-height: 22px;
+                            color: #000000;
+                            text-align: center;
+                            -webkit-transition: opacity 250ms;
+                            -moz-transition: opacity 250ms;
+                            -o-transition: opacity 250ms;
+                            transition: opacity 250ms;
+                            @include opacity(0);
+                            display: none;
+
+                            small {
+                                font-family: liebedorisbold, sans-serif;
+                                display: inline-block;
+                                font-size: 22px;
+                                line-height: 22px;
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+
+                        &.active .text,
+                        &.active .link {
+                            @include opacity(1);
+                        }
+
+                        &.fior_di_sale {
+                            top: 46.4%;
+                            left: -3.8%;
+
+                            .text {
+                                bottom: 30px;
+                                right: -52px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #46bdbd;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #46bdbd;
+                                }
+                            }
+                        }
+
+                        &.mediterraneo {
+                            left: 2.8%;
+                            top: 23.9%;
+
+                            .text {
+                                bottom: -30px;
+                                right: -50px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #19a19f;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #19a19f;
+                                }
+                            }
+                        }
+
+                        &.pesto_basilico {
+                            left: 16.4%;
+                            top: 6.1%;
+
+                            //.front_image img{
+                            //    max-width: 55px!important;
+                            //    width: 55px!important;
+                            //    position: relative;
+                            //    right: 2px;
+                            //}
+
+                            .text {
+                                right: -18px;
+                                bottom: -49px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #60883f;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #60883f;
+                                }
+                            }
+                        }
+
+                        &.carote_zenzero {
+                            top: -3.4%;
+                            right: 35.2%;
+
+                            .text {
+                                bottom: -55px;
+                                left: 0;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #f19b1e;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #f19b1e;
+                                }
+                            }
+                        }
+
+                        &.garam_masala {
+                            right: 16.5%;
+                            top: 6.1%;
+
+                            .text {
+                                bottom: -44px;
+                                left: 3px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #c27839;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #c27839;
+                                }
+                            }
+                        }
+
+                        &.affumicato {
+                            top: 23.8%;
+                            right: 2.5%;
+
+                            .text {
+                                left: -10px;
+                                bottom: -50px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #6d3717;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #6d3717;
+                                }
+                            }
+                        }
+
+                        &.peperoncino {
+                            right: -3.9%;
+                            top: 46.3%;
+
+                            .text {
+                                left: -25px;
+                                bottom: -10px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #b3262b;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #b3262b;
+                                }
+                            }
+                        }
+
+                        &.zenzero_limone {
+                            top: -3.4%;
+                            left: 35.3%;
+
+                            .text {
+                                bottom: 30px;
+                                left: -85px;
+                            }
+
+                            .svg_inn,
+                            .circle_animation3{
+                                fill: #bfc031;
+                            }
+
+                            .back_image {
+                                .circle_animation,
+                                .circle_animation2 {
+                                    stroke: #bfc031;
+                                }
+                            }
+                        }
+
+                        &.tamari {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product_item {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        -webkit-transition: opacity 500ms 450ms;
+        -moz-transition: opacity 500ms 450ms;
+        -o-transition: opacity 500ms 450ms;
+        transition: opacity 500ms 450ms;
+        //display: none;
+        @include opacity(0);
+
+        &.shown {
+            @include opacity(1);
+            //display: block;
+            -webkit-transition: opacity 500ms;
+            -moz-transition: opacity 500ms;
+            -o-transition: opacity 500ms;
+            transition: opacity 500ms;
+        }
+
+        //@keyframes animatedBackground {
+        //    from { background-position: 0 -40vh; }
+        //    to { background-position: 100% -40vh; }
+        //}
+
+        .inner_back_product {
+            background-image: url('../images/svg_wave/white_wave.svg');
+            background-repeat: no-repeat;
+            background-position: center -40vh;
+            //background-position: 0 -40vh;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            //animation: animatedBackground 40s linear infinite;
+
+
+            .elements .el {
+                position: absolute;
+            }
+
+            .central_product {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                //background: transparent url('../images/svg_wave/noise.png') repeat center center;
+
+                & > div:last-of-type{
+                    z-index: 22!important;
+
+                    .imgholder a{
+                        display: inline-block;
+                    }
+                }
+
+                .elements {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 15;
+
+                    & > div {
+                        position: absolute;
+                        //opacity: 0;
+                        opacity: 1;
+
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+                .central_product_holder {
+                    display: table;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 20;
+
+                    .product_title {
+                        display: table-cell!important;
+                        position: static!important;
+                        text-align: center;
+                        vertical-align: middle;
+
+                        h2 {
+                            font-family: liebedorisregular, sans-serif;
+                            color: #000000;
+                            font-size: get-vw(170px);
+                            line-height: get-vw(80px);
+                            margin: 0 27% 0 0;
+                            //margin: 0 25% 0 0;
+                            display: inline-block;
+                            width: 14%;
+                            padding-bottom: 10vh;
+                            padding-top: 21vh;
+                            font-weight: 400;
+
+                            opacity: 0;
+
+                            small {
+                                font-family: liebedorisregular, sans-serif;
+                                font-size: get-vw(100px);
+                                font-weight: 400;
+                                width: 100%;
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    .product_image {
+                        display: table-cell!important;
+                        position: static!important;
+                        text-align: center;
+                        vertical-align: middle;
+                        //position: relative;
+                        z-index: 30;
+
+                        .imgholder {
+                            display: inline-block;
+                            position: relative;
+                            max-width: 20%;
+                            padding-left: 6%;
+                            z-index: 31;
+                            -webkit-box-sizing: content-box;
+                            -moz-box-sizing: content-box;
+                            box-sizing: content-box;
+
+                            img {
+                                max-width: 100%;
+                                opacity: 0;
+                                position: static!important;
+                            }
+
+                            .central_product_link {
+                                position: absolute;
+                                left: 0;
+                                padding-top: 116px;
+                                width: 100%;
+                                z-index: 32;
+                                opacity: 0;
+
+                                a {
+                                    display: inline-block;
+                                    position: relative;
+                                    font-family: "brandon-grotesque", sans-serif;
+                                    color: #ffffff;
+                                    font-size: 10px;
+                                    line-height: 12px;
+                                    font-weight: 700;
+                                    text-transform: uppercase;
+                                    z-index: 33;
+                                    text-decoration: none;
+                                    letter-spacing: 0.2em;
+                                    padding-right: 59px;
+                                    padding-bottom: 36px;
+                                    //left: 48px;
+
+                                    .text{
+                                        display: block;
+                                        transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+                                        &.one{
+                                            opacity: 1!important;
+
+                                        }
+                                        &.two{
+                                            opacity: 0!important;
+                                            transform: translateY(-50%)!important;
+                                        }
+                                    }
+
+
+
+                                    .arrow {
+                                        position: absolute;
+                                        display: inline-block;
+                                        top: -14px;
+                                        right: -12px;
+                                        width: 47px;
+                                        height: 45px;
+                                        background: transparent url("../images/button/btn_holder.svg") repeat center center;
+                                        background-size: cover;
+
+                                        .btn_arrow{
+                                            //background: transparent url("../images/button/btn_arrow_black.svg") no-repeat center center;
+                                            //background-size: cover;
+                                            width: 16px;
+                                            height: 8px;
+                                            display: inline-block !important;
+                                            transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+                                            //position: absolute;
+                                            //top: 19px;
+                                            //right: 14px;
+                                            margin-top: 19px;
+
+                                            path{
+                                                opacity: 1!important;
+                                            }
+
+                                            &.one{
+                                                opacity: 1!important;
+                                                transform: translateX(50%)!important;
+                                                position: relative;
+                                                left: 2px;
+                                            }
+                                            &.two{
+                                                opacity: 0!important;
+                                                position: relative;
+                                                right: 2px;
+                                            }
+                                        }
+
+                                        path{
+                                            fill: #ffffff;
+                                        }
+                                    }
+
+                                    .line {
+                                        position: absolute;
+                                        //background: transparent url('../images/svg/new-line-white.svg') no-repeat center bottom;
+                                        background: transparent url(../images/ico_instagram_line_white.svg) no-repeat center top;
+                                        display: inline-block;
+                                        bottom: 38px;
+                                        left: 0;
+                                        width: 62%;
+                                        height: 3px;
+
+                                        &.sl{
+                                        }
+
+                                        &.en{
+                                            width: 70%;
+                                        }
+
+                                        &.it{
+                                            width: 65%;
+                                        }
+
+                                        .mask{
+                                            position: absolute;
+                                            top: 0;
+                                            bottom: 0;
+                                            left: 0;
+                                            right: 100%;
+                                            background: transparent url("../images/mediteran_back.png") repeat center center;
+                                            transition: left 0.24s cubic-bezier(0.215, 0.61, 0.355, 1), right 0.24s 240ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                                        }
+                                    }
+
+                                    &:hover{
+                                        .btn_arrow{
+                                            &.one{
+                                                opacity: 0!important;
+                                                transform: translateX(-50%)!important;
+                                            }
+                                            &.two{
+                                                opacity: 1!important;
+                                                transform: translateX(-50%)!important;
+                                                transition: all 0.24s 65ms cubic-bezier(0.215, 0.61, 0.355, 1)!important;
+                                            }
+                                        }
+                                        .text{
+                                            &.one{
+                                                opacity: 0!important;
+                                                transform: translateY(-100%)!important;
+                                            }
+                                            &.two{
+                                                opacity: 1!important;
+                                                transform: translateY(-100%)!important;
+                                                transition: all 0.24s 65ms cubic-bezier(0.215, 0.61, 0.355, 1)!important;
+                                            }
+                                        }
+                                        .line{
+                                            .mask{
+                                                right: -2%;
+                                                left: 102%;
+                                                transition: right 0.24s cubic-bezier(0.215, 0.61, 0.355, 1), left 0.24s 240ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                                            }
+
+                                            &.en{
+                                                .mask{
+                                                    right: 0;
+                                                    left: 100%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .product_tofu_image {
+                        display: table-cell!important;
+                        position: static!important;
+                        text-align: center;
+                        vertical-align: middle;
+                        padding-top: 11vh;
+
+                        opacity: 0;
+
+                        img {
+                            margin-left: 25%;
+                            //max-width: 13%;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.fior_di_sale {
+            background: transparent url('../images/bck_fiordisale.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/bck_fiordisale.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(19px, 8vh, auto, auto, 15vw, 130deg); }
+                .el_l2 { @include home-element(41px, 14vh, auto, auto, 17vw, 118deg); }
+                .el_l3 { @include home-element(53px, 27vh, auto, auto, 9vw, 165deg); }
+                .el_l4 { @include home-element(19px, 26vh, auto, auto, 24vw, 205deg); }
+                .el_l5 { @include home-element(48px, 46vh, auto, auto, 14vw, 205deg); }
+                .el_l5 { @include home-element(48px, 46vh, auto, auto, 14vw, 0deg); }
+                .el_l6 { @include home-element(19px, auto, auto, 22vh, 19vw, 70deg); }
+                .el_l7 { @include home-element(19px, auto, auto, 9vh, 27vw, 210deg); }
+
+                .el_r1 { @include home-element(19px, 14vh, 26vw, auto, auto, 150deg); }
+                .el_r2 { @include home-element(19px, 18vh, 28vw, auto, auto, 90deg); }
+                .el_r3 { @include home-element(50px, 26vh, 15vw, auto, auto, -30deg); }
+                .el_r4 { @include home-element(47px, 39vh, 5vw, auto, auto, -40deg); }
+                .el_r5 { @include home-element(19px, 48vh, 17vw, auto, auto, 22deg); }
+                .el_r7 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r8 { @include home-element(19px, auto, 25vw, 25vh, auto, 90deg); }
+                .el_r9 { @include home-element(53px, auto, 15vw, 19vh, auto, 0deg); }
+                .el_r10 { @include home-element(50px, auto, 28vw, 6vh, auto, 0deg); }
+
+                .el_r6 { @include home-element(62px, auto, 18vw, 43vh, auto, 0deg); }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 16vh;
+                font-size: get-vw(200px);
+                line-height: get-vw(160px);
+
+                img{
+                    width: get-vw(222px);
+                    padding-top: get-vw(60px);
+                }
+
+                small {
+                    font-size: get-vw(230px);
+                }
+            }
+
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #46bdbd!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/bck_fiordisale.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.affumicato {
+            background: transparent url('../images/dimljen_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/dimljen_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(166px, 13vh, auto, auto, 22vw, 210deg); }
+                .el_l2 { @include home-element(110px, 21vh, auto, auto, 8.5vw, 26deg); }
+                .el_l3 { @include home-element(105px, 35.5vh, auto, auto, 19.5vw, -63deg); }
+                .el_l5 { @include home-element(106px, auto, auto, 23.5vh, 23.5vw, 82deg); }
+
+                .el_r1 { @include home-element(110px, 12vh, 27.5vw, auto, auto, 67deg); }
+                .el_r2 { @include home-element(159px, 22vh, 14.5vw, auto, auto, 115deg); }
+                .el_r3 { @include home-element(108px, 32.5vh, 6.5vw, auto, auto, 212deg); }
+                .el_r4 { @include home-element(105px, 43.5vh, 19.5vw, auto, auto, -71deg); }
+                .el_r5 { @include home-element(160px, auto, 4.8vw, 39.3vh, auto, 13deg); }
+                .el_r6 { @include home-element(155px, auto, 18vw, 27vh, auto, -70deg); }
+                .el_r7 { @include home-element(110px, auto, 29vw, 10vh, auto, 77deg); }
+
+                .el_l4 { @include home-element(178px, auto, auto, 37.5vh, 11vw, 261deg); }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 {
+                margin: 0 24% 0 0;
+                padding-top: 18vh;
+                font-size: get-vw(170px);
+                line-height: get-vw(130px);
+
+                img{
+                    width: 10.8vw;
+                    padding-bottom: get-vh(27px);
+                    padding-right: 22px;
+                }
+
+                small {
+                    font-size: get-vw(190px);
+                }
+            }
+
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 {
+                margin: 0 24% 0 0;
+                padding-top: 17vh;
+                font-size: get-vw(170px);
+                line-height: get-vw(130px);
+
+                img{
+                    width: get-vw(230px);
+                    padding-bottom: get-vh(27px);
+                    padding-right: 22px;
+                }
+
+                small {
+                    font-size: get-vw(190px);
+                }
+            }
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                margin: 0 24% 0 0;
+                padding-top: 18vh;
+                font-size: get-vw(170px);
+                line-height: get-vw(130px);
+
+                img{
+                    width: get-vw(230px);
+                    padding-bottom: get-vh(27px);
+                    padding-right: 22px;
+                }
+
+                small {
+                    font-size: get-vw(190px);
+                }
+            }
+
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #6d3717!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/dimljen_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.carote_zenzero {
+            background: transparent url('../images/korencek_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/korencek_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(150px, 24vh, auto, auto, 5vw, 6deg); }
+                .el_l2 { @include home-element(150px, 13vh, auto, auto, 17vw, 241deg); }
+                .el_l3 { @include home-element(150px, 41vh, auto, auto, 18vw, -70deg); }
+                .el_l4 { @include home-element(150px, auto, auto, 16vh, 13vw, 36deg); }
+                .el_l5 { @include home-element(219px, auto, auto, 5vh, 24vw, 16deg); }
+
+                .el_r1 { @include home-element(222px, 18vh, 7vw, auto, auto, -6deg); }
+                .el_r3 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r4 { @include home-element(158px, auto, 23vw, 12vh, auto, 93deg); }
+                .el_r5 { @include home-element(150px, auto, 7vw, 15vh, auto, 39deg); }
+
+                .el_r2 {
+                    @include home-element(200px, auto, 17vw, 38vh, auto, -95deg);
+                    //background: transparent url('../images/elements_back/home_carote.svg') no-repeat center center;
+                    //background-size: contain;
+                    //height: 271px;
+
+                    img {
+                        //position: absolute;
+                        ////bottom: get-vh(22px);
+                        ////left: get-vw(48px);
+                        ////width: get-vw(217px);
+                        //bottom: 7%;
+                        //left: 14%;
+                        //width: 69%;
+                    }
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 21vh;
+                font-size: get-vw(116px);
+                line-height: get-vw(118px);
+
+                img{
+                    width: get-vw(298px);
+                    padding-bottom: get-vh(14px);
+                    padding-right: 18px;
+                }
+
+                small {
+                    font-size: get-vw(171px);
+                }
+            }
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #f19b1e!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/korencek_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.peperoncino {
+            background: transparent url('../images/cili_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/cili_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(162px, 15vh, auto, auto, 11vw, -7deg); }
+                .el_l2 { @include home-element(170px, 28vh, auto, auto, 17vw, 159deg); }
+                .el_l3 { @include home-element(267px, 38vh, auto, auto, 6vw, 55deg); }
+                .el_l4 { @include home-element(170px, auto, auto, 19vh, 22vw, -12deg); }
+
+                .el_r1 { @include home-element(279px, 11vh, 6vw, auto, auto, 74deg); }
+                .el_r4 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r5 { @include home-element(169px, auto, 15vw, 20vh, auto, 245deg); }
+                .el_r6 { @include home-element(236px, auto, 27vw, 6vh, auto, 151deg); }
+
+                .el_r2 {
+                    @include home-element(171px, 39vh, 7vw, auto, auto, 220deg);
+                    //-ms-transform: scaleX(-1) rotate(220deg);
+                    //-webkit-transform: scaleX(-1) rotate(220deg);
+                    //transform: scaleX(-1) rotate(220deg);
+                }
+
+                .el_r3 {
+                    @include home-element(263px, auto, 17vw, 43vh, auto, -45deg);
+                    //background: transparent url('../images/elements_back/home_pepperoncino.svg') no-repeat center center;
+                    //background-size: contain;
+                    //height: 374px;
+
+                    img {
+                        //position: absolute;
+                        ////bottom: get-vh(95px);
+                        ////left: get-vw(-8px);
+                        ////width: get-vw(265px);
+                        //bottom: 24%;
+                        //left: -4%;
+                        //width: 100%;
+                    }
+                }
+            }
+
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 22vh;
+                font-size: get-vw(285px);
+
+
+
+
+                line-height: get-vw(190px);
+
+                img{
+                    width: get-vw(236px);
+                    padding-bottom: get-vh(42px);
+                    padding-right: 10px;
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 23vh;
+                font-size: get-vw(285px);
+                line-height: get-vw(190px);
+
+                img{
+                    width: 10.2vw;
+                    padding-bottom: get-vh(42px);
+                    padding-right: 10px;
+                }
+            }
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 23vh;
+                font-size: get-vw(285px);
+                line-height: get-vw(190px);
+
+                img{
+                    width: get-vw(236px);
+                    padding-bottom: get-vh(42px);
+                    padding-right: 10px;
+                }
+            }
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #b3262b!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/cili_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.pesto_basilico {
+            background: transparent url('../images/pesto_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/pesto_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(26px, 2vh, auto, auto, 31vw, 8deg); }
+                .el_l2 { @include home-element(22px, 9vh, auto, auto, 9vw, 0deg); }
+                .el_l3 { @include home-element(25px, 14vh, auto, auto, 10vw, 0deg); }
+                .el_l4 { @include home-element(141px, 16vh, auto, auto, 22vw, -62deg); }
+                .el_l5 { @include home-element(84px, 23vh, auto, auto, 8vw, -77deg); }
+                .el_l6 { @include home-element(86px, 43vh, auto, auto, 22vw, 185deg); }
+                .el_l7 { @include home-element(27px, 46vh, auto, auto, 11vw, -136deg); }
+                .el_l8 { @include home-element(22px, auto, auto, 31vh, 16vw, 0deg); }
+                .el_l9 { @include home-element(22px, auto, auto, 28vh, 17vw, 0deg); }
+                .el_l11 { @include home-element(135px, auto, auto, 12vh, 22vw, -39deg); }
+
+                .el_r1 { @include home-element(26px, 1vh, 18vw, auto, auto, 73deg); }
+                .el_r2 { @include home-element(23px, 12vh, 24vw, auto, auto, 73deg); }
+                .el_r3 { @include home-element(83px, 13vh, 8vw, auto, auto, 0deg); }
+                .el_r4 { @include home-element(130px, 29vh, 16vw, auto, auto, 34deg); }
+                .el_r5 { @include home-element(22px, 36vh, 7vw, auto, auto, 14deg); }
+                .el_r7 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r9 { @include home-element(86px, auto, 19vw, 10vh, auto, 186deg); }
+                .el_r10 { @include home-element(26px, auto, 13vw, 25vh, auto, -50deg); }
+                .el_r11 { @include home-element(21px, auto, 5vw, 13vh, auto, 0deg); }
+
+                .el_l10 {
+                    //@include home-floating(4);
+                    left: 4vw;
+                    bottom: 17vh;
+                    width: get-vw(55px);
+                    height: get-vh(62px);
+                    @include rotate(127deg);
+                    display: none;
+
+                    img.el13 {
+                        position: absolute;
+                        width: get-vw(21px);
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    img.el14 {
+                        position: absolute;
+                        width: get-vw(22px);
+                        left: 0;
+                        top: 0;
+                    }
+                    img.el15 {
+                        position: absolute;
+                        width: get-vw(21px);
+                        right: 0;
+                        top: 20%;
+                    }
+                }
+
+                .el_r8 {
+                    //@include home-floating(4);
+                    right: 26vw;
+                    bottom: 20vh;
+                    width: get-vw(55px);
+                    height: get-vh(62px);
+                    @include rotate(127deg);
+
+                    img.el13 {
+                        position: absolute;
+                        width: get-vw(21px);
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    img.el14 {
+                        position: absolute;
+                        width: get-vw(22px);
+                        left: 0;
+                        top: 0;
+                    }
+
+                    img.el15 {
+                        position: absolute;
+                        width: get-vw(21px);
+                        right: 0;
+                        top: 20%;
+                    }
+                }
+
+                .el_r6 {
+                    @include home-element(100px, auto, 18vw, 39vh, auto, 0deg);
+                    //background: transparent url('../images/elements_back/home_pesto.svg') no-repeat center center;
+                    //background-size: contain;
+                    //height: get-vh(232px);
+
+                    img {
+                        //position: absolute;
+                        //bottom: get-vh(91px);
+                        //left: get-vw(33px);
+                        //width: get-vw(131px);
+                    }
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 21vh;
+                font-size: get-vw(180px);
+                line-height: get-vw(118px);
+                letter-spacing: 0.04em;
+
+                img{
+                    width: get-vw(292px);
+                    padding-bottom: get-vh(27px);
+                    padding-right: 10px;
+                }
+
+                small {
+                    font-size: get-vw(120px);
+                }
+            }
+
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #60883f!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/pesto_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.mediterraneo {
+            background: transparent url('../images/mediteran_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/mediteran_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(61px, 11vh, auto, auto, 15vw, 114deg); }
+                .el_l2 { @include home-element(135px, 32vh, auto, auto, 18vw, 90deg); }
+                .el_l3 { @include home-element(43px, 44vh, auto, auto, 7vw, 16deg); }
+                .el_l4 { @include home-element(62px, auto, auto, 30vh, 20vw, -65deg); }
+                .el_l5 { @include home-element(55px, auto, auto, 30vh, 8vw, 216deg); }
+                .el_l6 { @include home-element(183px, auto, auto, 7vh, 24vw, 0deg); }
+
+                .el_r1 { @include home-element(43px, 14vh, 12vw, auto, auto, 45deg); }
+                .el_r2 { @include home-element(41px, 28vh, 19vw, auto, auto, 97deg); }
+                .el_r3 { @include home-element(132px, 34vh, 6vw, auto, auto, -37deg); }
+                .el_r5 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r6 { @include home-element(63px, auto, 24vw, 23vh, auto, 7deg); }
+                .el_r7 { @include home-element(41px, auto, 22vw, 27vh, auto, 86deg); }
+                .el_r8 { @include home-element(41px, auto, 3vw, 29vh, auto, 97deg); }
+                .el_r9 { @include home-element(134px, auto, 13vw, 14vh, auto, 90deg); }
+
+                .el_r4 {
+                    @include home-element(80px, auto, 15vw, 40vh, auto, 0deg);
+                    //background: transparent url('../images/elements_back/home_mediterraneo.svg') no-repeat center center;
+                    //background-size: contain;
+                    //height: get-vh(216px);
+
+                    img {
+                        //position: absolute;
+                        ////bottom: get-vh(36px);
+                        ////left: get-vw(61px);
+                        ////width: get-vw(57px);
+                        //bottom: 18%;
+                        //left: 30%;
+                        //width: 32%;
+                    }
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 17vh;
+                font-size: get-vw(207px);
+                line-height: get-vw(140px);
+
+                img{
+                    width: get-vw(280px);
+                    padding-right: get-vh(28px);
+                }
+
+                small {
+                    font-size: get-vw(166px);
+                }
+            }
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #19a19f!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/mediteran_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.garam_masala {
+            background: transparent url('../images/garam_masala_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/garam_masala_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(50px, 14vh, auto, auto, 17vw, 143deg); }
+                .el_l2 { @include home-element(61px, 20vh, auto, auto, 8vw, -103deg); }
+                .el_l3 { @include home-element(95px, 33vh, auto, auto, 20vw, 86deg); }
+                .el_l5 { @include home-element(92px, auto, auto, 26vh, 9vw, -11deg); }
+                .el_l6 { @include home-element(194px, auto, auto, 15vh, 19vw, 0deg); }
+                .el_l7 { @include home-element(57px, auto, auto, 9vh, 34vw, 149deg); }
+
+                .el_r1 { @include home-element(96px, 8vh, 26vw, auto, auto, 0deg); }
+                .el_r2 { @include home-element(61px, 11vh, 5vw, auto, auto, 95deg); }
+                .el_r3 { @include home-element(50px, 15vh, 7vw, auto, auto, 7deg); }
+                .el_r4 { @include home-element(200px, 30vh, 12vw, auto, auto, 84deg); }
+                .el_r5 { @include home-element(50px, 44vh, 5vw, auto, auto, 0deg); }
+                .el_r6 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r7 { @include home-element(60px, auto, 20vw, 28vh, auto, 163deg); }
+                .el_r8 { @include home-element(95px, auto, 8vw, 13vh, auto, 86deg); }
+
+                .el_l4 {
+                    @include home-element(124px, auto, auto, 40.5vh, 14.5vw, -20deg);
+                    //background: transparent url('../images/elements_back/home_garam.svg') no-repeat center center;
+                    //background-size: contain;
+                    //height: get-vh(184px);
+
+                    img {
+                        //position: absolute;
+                        ////bottom: get-vh(40px);
+                        ////left: get-vw(45px);
+                        ////width: get-vw(105px);
+                        //bottom: 23%;
+                        //left: 23%;
+                        //width: 55%;
+                    }
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 22vh;
+                font-size: get-vw(167px);
+                line-height: get-vw(127px);
+
+                img{
+                    width: get-vw(300px);
+                    padding-bottom: get-vh(16px);
+                    padding-right: 10px;
+                }
+
+                small {
+                    font-size: get-vw(141px);
+                }
+            }
+
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #c27839!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/garam_masala_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.zenzero_limone {
+            background: transparent url('../images/ingver_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/ingver_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l2 { @include home-element(182px, 21vh, auto, auto, 20vw, -65deg); }
+                .el_l3 { @include home-element(181px, 31vh, auto, auto, 7vw, 211deg); }
+                .el_l5 { @include home-element(180px, auto, auto, 21vh, 16vw, -35deg); }
+                .el_l6 { @include home-element(190px, auto, auto, 10vh, 25vw, 24deg); }
+
+                .el_r1 { @include home-element(173px, 11vh, 18vw, auto, auto, -44deg); }
+                .el_r2 { @include home-element(115px, 12vh, 8vw, auto, auto, 140deg); }
+                .el_r3 { @include home-element(155px, 26vh, 12vw, auto, auto, 192deg); }
+                .el_r4 { @include home-element(124px, 36vh, 19vw, auto, auto, 0deg); }
+                .el_r5 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r6 { @include home-element(150px, auto, 21vw, 24vh, auto, -38deg); }
+                .el_r7 { @include home-element(120px, auto, 27vw, 10vh, auto, 220deg); }
+
+                .el_l1 {
+                    @include home-element(155px, 6vh, auto, auto, 14vw, -6deg);
+                    //-ms-transform: scaleX(-1) rotate(-6deg);
+                    //-webkit-transform: scaleX(-1) rotate(-6deg);
+                    //transform: scaleX(-1) rotate(-6deg);
+                }
+
+                .el_l4 {
+                    @include home-element(175px, auto, auto, 39vh, 18vw, 260deg);
+                    //background: transparent url('../images/elements_back/home_zenzero.svg') no-repeat center center;
+                    //background-size: contain;
+                    //height: get-vh(240px);
+
+                    img {
+                        //position: absolute;
+                        ////bottom: get-vh(48px);
+                        ////left: get-vw(62px);
+                        ////width: get-vw(155px);
+                        //bottom: 21%;
+                        //left: 25%;
+                        //width: 61%;
+                    }
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                padding-top: 19vh;
+                font-size: get-vw(167px);
+                line-height: get-vw(129px);
+
+                img{
+                    width: get-vw(292px);
+                    padding-right: get-vh(17px);
+                }
+
+                small {
+                    font-size: get-vw(149px);
+                }
+            }
+
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #bfc031!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/ingver_back.png') repeat center center!important;
+                }
+            }
+        }
+
+        &.tamari {
+            background: transparent url('../images/tamari_back.png') repeat center center;
+
+            footer .footer_box{
+                .box_item, .designed_box_item{
+                    background: transparent url('../images/tamari_back.png') repeat center center;
+                }
+            }
+
+            .elements {
+                .el_l1 { @include home-element(54px, 14vh, auto, auto, 26vw, 205deg); }
+                .el_l2 { @include home-element(54px, 25vh, auto, auto, 10vw, 34deg); }
+                .el_l3 { @include home-element(54px, 29vh, auto, auto, 17vw, 30deg); }
+                .el_l4 { @include home-element(54px, 35vh, auto, auto, 14vw, -57deg); }
+                .el_l5 { @include home-element(54px, 44vh, auto, auto, 19vw, 90deg); }
+                .el_l6 { @include home-element(54px, auto, auto, 24vh, 23vw, 90deg); }
+
+                .el_r1 { @include home-element(54px, 22vh, 24vw, auto, auto, -56deg); }
+                .el_r2 { @include home-element(54px, 36vh, 14vw, auto, auto, 110deg); }
+                .el_r3 { @include home-element(54px, 39vh, 19vw, auto, auto, 186deg); }
+                .el_r5 { @include home-element(160px, auto, 5vw, 37vh, auto, 0deg); }
+                .el_r6 { @include home-element(54px, auto, 7vw, 20vh, auto, -29deg); }
+                .el_r7 { @include home-element(54px, auto, 34vw, 4vh, auto, -71deg); }
+
+                .el_r4 {
+                    @include home-element(83px, auto, 18vw, 37vh, auto, 97deg);
+                    background: transparent url('../images/elements_back/home_tamari.svg') no-repeat center center;
+                    background-size: contain;
+                    height: 83px;
+
+                    img {
+                        position: absolute;
+                        bottom: 14px;
+                        left: 14px;
+                        width: 54px;
+                    }
+                }
+            }
+
+            .inner_back_product .central_product .central_product_holder {
+                .product_tofu_image {
+                    padding-top: 17vh;
+                }
+
+                .product_image .imgholder {
+                    padding-left: 3%;
+                    padding-top: 2%;
+                }
+            }
+
+            &.lang_it .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_en .inner_back_product .central_product .central_product_holder .product_title h2 ,
+            &.lang_sl .inner_back_product .central_product .central_product_holder .product_title h2 {
+                font-family: liebedorisbold, sans-serif;
+                margin: 0 23% 0 0;
+                padding-top: 19vh;
+                font-size: 184px;
+                line-height: 156px;
+
+
+
+                small {
+                    font-family: liebedorisbold, sans-serif;
+                    font-size: 225px;
+                }
+            }
+
+            .central_product_link{
+                .arrow .btn_arrow path{
+                    fill: #b1ad97!important;
+                }
+
+                .line .mask{
+                    background: transparent url('../images/tamari_back.png') repeat center center!important;
+                }
+            }
+        }
+    }
+}
+
+//@media (min-width: 1801px) and (max-width: 2200px) {
+//    .home_main {
+//        .inner_back {
+//            &.fior_di_sale {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 130px;
+//                    line-height: 100px;
+//
+//                    small {
+//                        font-size: 150px;
+//                    }
+//                }
+//            }
+//
+//            &.affumicato {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 160px;
+//                    line-height: 90px;
+//
+//                    small {
+//                        font-size: 120px;
+//                    }
+//                }
+//            }
+//
+//            &.carote_zenzero {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 80px;
+//                    line-height: 80px;
+//
+//                    small {
+//                        font-size: 120px;
+//                    }
+//                }
+//            }
+//
+//            &.peperoncino {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 190px;
+//                    line-height: 190px;
+//                }
+//            }
+//
+//            &.pesto_basilico {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 140px;
+//                    line-height: 80px;
+//
+//                    small {
+//                        font-size: 95px;
+//                    }
+//                }
+//            }
+//
+//            &.mediterraneo {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 140px;
+//                    line-height: 90px;
+//
+//                    small {
+//                        font-size: 110px;
+//                    }
+//                }
+//            }
+//
+//            &.garam_masala {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 120px;
+//                    line-height: 85px;
+//
+//                    small {
+//                        font-size: 100px;
+//                    }
+//                }
+//            }
+//
+//            &.zenzero_limone {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 110px;
+//                    line-height: 85px;
+//
+//                    small {
+//                        font-size: 100px;
+//                    }
+//                }
+//            }
+//
+//            &.tamari {
+//                &.lang_si .inner_back_product .central_product .central_product_holder .product_title h2 {
+//                    font-size: 145px;
+//                    line-height: 120px;
+//
+//                    small {
+//                        font-size: 165px;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
+.home {
+    .top_menu .all_products{
+        padding-top: 18px;
+        padding-right: 20px;
+    }
+}
+
+/*     MEDIA QUERIES
+--------------------------------*/
+
+/*      width
+--------------*/
+
+@media (min-width: 2000px){
+
+}
+
+@media (min-width: 2221px) and (max-width: 2440px){
+
+}
+
+@media (min-width: 2001px) and (max-width: 2220px){
+    //.home_main .product_circle .outer_circle .inner_circle .image_holder .product_circle_link{
+    //    &.fior_di_sale{
+    //        top: 31%;
+    //        left: -2%;
+    //    }
+    //
+    //    &.affumicato{
+    //        right: 16%;
+    //        top: 8%;
+    //    }
+    //
+    //    &.carote_zenzero{
+    //        left: 40%;
+    //        top: -1.8%;
+    //    }
+    //
+    //    &.peperoncino{
+    //        top: 22%;
+    //        right: 3.8%;
+    //    }
+    //
+    //    &.pesto_basilico{
+    //        left: 21.5%;
+    //        top: 3.8%;
+    //    }
+    //
+    //    &.mediterraneo{
+    //        left: 7%;
+    //        top: 15.2%;
+    //    }
+    //
+    //    &.garam_masala{
+    //        top: -0.2%;
+    //        right: 32.5%;
+    //    }
+    //
+    //    &.zenzero_limone{
+    //        right: -2.5%;
+    //        top: 39.7%;
+    //    }
+    //}
+
+    .home_main .product_item {
+        &.fior_di_sale .elements {
+            .el_r6 {
+                bottom: 45vh !important;
+            }
+        }
+
+        &.carote_zenzero .elements{
+            .el_r2{
+                bottom: 43vh!important;
+            }
+        }
+
+        &.affumicato .elements{
+            .el_l4{
+                bottom: 39vh!important;
+            }
+        }
+
+        &.peperoncino .elements{
+            .el_r3{
+                bottom: 39vh!important;
+            }
+        }
+    }
+}
+
+@media (max-width: 2000px){
+
+}
+
+@media (min-width: 1801px) and (max-width: 2000px){
+    .home_main .product_circle .outer_circle .inner_circle .image_holder .product_circle_link{
+        &.fior_di_sale{
+            top: 44.8%;
+            left: -5.2%;
+        }
+
+        &.affumicato{
+            top: 22.2%;
+            right: 1.5%;
+        }
+
+        &.carote_zenzero{
+            top: -4.9%;
+            right: 34.2%;
+        }
+
+        &.peperoncino{
+            right: -5%;
+            top: 44.8%;
+        }
+
+        &.pesto_basilico{
+            left: 15%;
+            top: 4.5%;
+        }
+
+        &.mediterraneo{
+            left: 1.2%;
+            top: 22.4%;
+        }
+
+        &.garam_masala{
+            right: 15.2%;
+            top: 4.5%;
+        }
+
+        &.zenzero_limone{
+            top: -5.2%;
+            left: 34%;
+        }
+    }
+
+    .home_main .product_item {
+        &.fior_di_sale .elements {
+            .el_r6 {
+                bottom: 45vh !important;
+            }
+        }
+
+        &.carote_zenzero .elements{
+            .el_r2{
+                bottom: 43vh!important;
+            }
+        }
+
+        &.affumicato .elements{
+            .el_l4{
+                bottom: 39vh!important;
+            }
+        }
+
+        &.peperoncino .elements{
+            .el_r3{
+                bottom: 39vh!important;
+            }
+        }
+    }
+}
+
+@media (max-width: 1920px){
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_tofu_image img{
+        width: 18%;
+    }
+}
+
+@media(min-width: 1441px) and (max-width: 1920px){
+    .home_main .product_item.pesto_basilico .elements .el_l1{
+        display: none;
+    }
+
+    .home_main .product_item.carote_zenzero .elements .el_r2{
+        right: 4vw;
+    }
+
+    .top_menu .logo, .top_menu .all_products{
+        width: 15%;
+    }
+
+    .top_menu nav.main_menu{
+        width: 70%;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1800px){
+    .home_main .product_circle .outer_circle .inner_circle .image_holder .product_circle_link{
+        &.fior_di_sale{
+            top: 30.2%;
+            left: -3.2%;
+        }
+
+        &.affumicato{
+            top: 20.6%;
+            right: 1.8%;
+        }
+
+        &.carote_zenzero{
+            top: -3.5%;
+            right: 30.5%;
+        }
+
+        &.peperoncino{
+            right: -4.5%;
+            top: 39%;
+        }
+
+        &.pesto_basilico{
+            left: 20%;
+            top: 0.7%;
+        }
+
+        &.mediterraneo{
+            left: 6%;
+            top: 12.5%;
+        }
+
+        &.garam_masala{
+            right: 14.2%;
+            top: 5.3%;
+        }
+
+        &.zenzero_limone{
+            left: 40%;
+            top: -5.5%;
+        }
+    }
+
+    .home_main .product_item{
+        &.fior_di_sale .elements {
+            .el_r5 {
+                top: 40vh!important;
+            }
+            .el_r6 {
+                bottom: 45vh!important;
+            }
+            .el_r8{
+                right: 20vw!important;
+            }
+            .el_r7{
+                display: none;
+            }
+        }
+
+        &.pesto_basilico .elements{
+            .el_r6{
+                bottom: 40vh;
+            }
+        }
+
+        &.carote_zenzero .elements{
+            .el_r2{
+                bottom: 45vh!important;
+            }
+        }
+    }
+
+    .home_main .product_circle .outer_circle .inner_circle .image_holder{
+        width: 100%;
+    }
+
+    .single_product_page .right_split .blog_latest,
+    .single_product_page .right_split .nutrition_values{
+        padding-left: 15%!important;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1570px){
+    .home_main .product_circle .outer_circle .inner_circle .image_holder .product_circle_link{
+        &.fior_di_sale{
+            //top: 29%;
+            //left: -5.2%;
+            top: 44.5%;
+            left: -5.4%;
+        }
+
+        &.affumicato{
+            //right: 12.2%;
+            //top: 4.3%;
+            top: 21.9%;
+            right: 1.1%;
+        }
+
+        &.carote_zenzero{
+            //left: 38%;
+            //top: -6.5%;
+            top: -5.3%;
+            right: 33.9%;
+        }
+
+        &.peperoncino{
+            //top: 19.6%;
+            //right: -0.2%;
+            right: -5.2%;
+            top: 44.5%;
+        }
+
+        &.pesto_basilico{
+            //left: 19%;
+            //top: -0.3%;
+            left: 14.8%;
+            top: 4.3%;
+        }
+
+        &.mediterraneo{
+            //left: 4%;
+            //top: 11.5%;
+            left: 1%;
+            top: 22%;
+        }
+
+        &.garam_masala{
+            //top: -4.5%;
+            //right: 28.5%;
+            right: 15%;
+            top: 4.3%;
+        }
+
+        &.zenzero_limone{
+            //right: -6.5%;
+            //top: 38%;
+            left: 33.7%;
+            top: -5.5%;
+        }
+    }
+
+    .home_main .product_circle .outer_circle .inner_circle .image_holder{
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1100px){
+
+}
+
+@media (max-width: 1441px){
+    footer .agro{
+        height: 120px;
+        bottom: 63px;
+        width: 108px;
+        left: 10px;
+    }
+
+    footer .inovation-of-the-year{
+        height: 120px;
+        bottom: 63px;
+        width: 128px;
+        left: 150px;
+    }
+
+    .home_main .product_item.pesto_basilico .elements .el_l1{
+        display: none;
+    }
+
+    .home_main .product_item.mediterraneo .elements .el_l6{
+        bottom: 10vh;
+    }
+
+    .home_main .product_item.peperoncino .elements .el_l3{
+        top: 39vh;
+    }
+
+    .home_main .product_item.pesto_basilico .elements .el_r8{
+        display: none!important;
+    }
+
+    .home_main .product_item.pesto_basilico .elements .el_r1{
+        display: none!important;
+    }
+
+    .home_main .product_item.garam_masala .elements .el_l3,
+    .home_main .product_item.garam_masala .elements .el_r3,
+    .home_main .product_item.garam_masala .elements .el_r1,
+    .home_main .product_item.affumicato .elements .el_r1,
+    .home_main .product_item.affumicato .elements .el_r4,
+    .home_main .product_item.peperoncino .elements .el_l2,
+    .home_main .product_item.peperoncino .elements .el_r2{
+        display: none!important;
+    }
+}
+
+
+@media (max-width: 1441px){
+    //.home_main .product_circle{
+    //    left: 22%;
+    //    margin-top: 7vh;
+    //    width: 57%;
+    //}
+
+    .top_menu nav.main_menu ul li{
+        margin: 0 19px;
+    }
+
+    .top_menu .logo, .top_menu .all_products{
+        width: 15%;
+    }
+
+    .top_menu nav.main_menu{
+        width: 70%;
+    }
+
+
+    footer .footer_box .designed_box_item{
+        font-size: 0;
+        //padding: 9px 27px 15px 22px;
+        padding: 15px 35px 15px 32px;
+
+
+        svg{
+            top: 12px;
+        }
+    }
+
+    .home_main .product_circle .outer_circle .inner_circle .image_holder .product_circle_link{
+        .text{
+            font-size: 16px;
+            line-height: 18px;
+
+            small{
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+
+        &.fior_di_sale{
+            top: 30%;
+            left: -4%;
+
+            .text{
+                bottom: 20px;
+                right: -34px;
+            }
+        }
+
+        &.affumicato{
+            top: 20%;
+            right: 0.2%;
+
+            .text{
+                left: -5px;
+                bottom: -30px;
+            }
+        }
+
+        &.carote_zenzero{
+            top: -5%;
+            right: 28.1%;
+
+            .text{
+                bottom: -35px;
+                left: 0;
+            }
+        }
+
+        &.peperoncino{
+            right: -5.5%;
+            top: 37.7%;
+
+            .text{
+                left: -15px;
+                bottom: -3px;
+            }
+        }
+
+        &.pesto_basilico{
+            left: 19%;
+            top: 0.6%;
+
+            .text{
+                right: -13px;
+                bottom: -34px;
+            }
+        }
+
+        &.mediterraneo{
+            left: 4.7%;
+            top: 12.2%;
+
+            .text{
+                bottom: -15px;
+                right: -30px;
+            }
+        }
+
+        &.garam_masala{
+            right: 12%;
+            top: 5.2%;
+
+            .text{
+                bottom: -34px;
+                left: 3px;
+            }
+        }
+
+        &.zenzero_limone{
+            left: 35.6%;
+            top: -5.8%;
+
+            .text{
+                bottom: 20px;
+                left: -50px;
+            }
+        }
+    }
+
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_image .imgholder{
+        max-width: 25%;
+        padding-left: 11%;
+        //bottom: 42px;
+    }
+
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_tofu_image{
+        padding-top: 13.5vh;
+        //padding-top: 0.5vh;
+
+        img{
+            margin-left: 33.5%;
+            max-width: 18%;
+        }
+    }
+
+    .top_menu .logo{
+        padding-top: 10px;
+        padding-left: 10px;
+
+        a{
+            width: 67px;
+        }
+    }
+
+    .home .top_menu .all_products{
+        padding-top: 10px;
+        padding-right: 10px;
+    }
+
+    .top_menu .all_products{
+        padding-top: 25px;
+        padding-right: 25px;
+    }
+
+    .top_menu nav.main_menu ul{
+        padding: 21px 0 0 0;
+    }
+
+    //.home_main .product_item .inner_back_product .central_product .central_product_holder .product_title h2{
+    //    padding-top: 22vh!important;
+    //    margin: 0 35% 0 0;
+    //}
+
+    footer{
+        //padding: 0 20px 20px 20px;
+
+        .left_part {
+            left: 0;
+            bottom: 0;
+        }
+
+        .right_part {
+            right: 20px;
+            bottom: 0;
+        }
+    }
+
+    //footer .agro{
+    //    bottom: 53px;
+    //    left: 0;
+    //}
+
+    .home_main .product_item{
+        &.fior_di_sale .elements {
+            .el_l1{
+                top: 12.3vh!important;
+                left: 8.2vw!important;
+            }
+            .el_l2{
+                top: 17.7vh!important;
+                left: 11vw!important;
+            }
+            .el_l3{
+                top: 30vh!important;
+                left: 1vw!important;
+            }
+            .el_l4{
+                top: 29.3vh!important;
+                left: 19.3vw!important;
+            }
+            .el_l5{
+                top: 47.5vh!important;
+                left: 7.8vw!important;
+            }
+            .el_l6{
+                bottom: 22.5vh;
+                left: 12.8vw;
+            }
+            .el_l7{
+                bottom: 10vh;
+                left: 22.5vw;
+            }
+            .el_r1{
+                top: 17.1vh!important;
+                right: 24.8vw!important;
+            }
+            .el_r2{
+                top: 21.1vh!important;
+                right: 26.7vw!important;
+            }
+            .el_r3{
+                top: 29vh!important;
+                right: 11.5vw!important;
+            }
+            .el_r4{
+                top: 41vh!important;
+                right: 2vw!important;
+            }
+            .el_r5 {
+                top: 50.5vh!important;
+                right: 14vw!important;
+                display: none;
+            }
+            .el_r6 {
+                right: 14.5vw!important;
+                background: none!important;
+            }
+            .el_r7{
+                display: none;
+            }
+            .el_r8{
+                right: 22.7vw!important;
+                bottom: 25.3vh!important;
+            }
+            .el_r9{
+                right: 11vw!important;
+                bottom: 19vh!important;
+            }
+            .el_r10{
+                right: 26.5vw!important;
+                bottom: 7vh!important;
+            }
+
+        }
+
+        &.pesto_basilico .elements{
+            .el_r6{
+                bottom: 40vh!important;
+                right: 10vw!important;
+            }
+            .el_r4{
+                top: 20vh!important;
+            }
+
+            .el_l6{
+                left: 16vw!important;
+            }
+
+            .el_l10{
+                bottom: 30vh!important;
+            }
+
+            .el_l11{
+                left: 17vw!important;
+            }
+
+            .el_r7{
+                display: none;
+            }
+
+            //.el_l8,
+            //.el_l9,
+            //.el_l10,
+            //.el_l11,
+            //.el_r8,
+            //.el_r9,
+            //.el_r10,
+            //.el_r11{
+            //    display: none;
+            //}
+        }
+
+        &.carote_zenzero .elements{
+            .el_r2{
+                bottom: 45vh!important;
+                right: 8vw!important;
+            }
+
+            .el_l3{
+                left: 13vw!important;
+                top: 37vh!important;
+            }
+
+            .el_r3{
+                display: none;
+            }
+
+            //.el_l4,
+            //.el_l5,
+            //.el_r4,
+            //.el_r5{
+            //    display: none;
+            //}
+        }
+
+        &.affumicato .elements{
+            .el_l4{
+                bottom: 45vh!important;
+            }
+
+            .el_r4{
+                right: 10vw!important;
+            }
+
+            .el_r5{
+                display: none;
+            }
+
+            .el_l3{
+                left: 5vw!important;
+            }
+
+            //.el_l5,
+            //.el_r6,
+            //.el_r7{
+            //    display: none;
+            //}
+        }
+
+        &.peperoncino .elements{
+            .el_r3{
+                right: 10vw!important;
+                bottom: 42vh!important;
+            }
+
+            .el_r4{
+                display: none;
+            }
+
+            //.el_l4,
+            //.el_r5,
+            //.el_r6{
+            //    display: none;
+            //}
+        }
+
+        &.zenzero_limone .elements{
+            .el_r4{
+                right: 8vw!important;
+            }
+
+            .el_l4{
+                bottom: 40vh!important;
+                left: 10vw!important;
+            }
+
+            .el_r5{
+                display: none;
+            }
+
+            //.el_l5,
+            //.el_l6,
+            //.el_r6,
+            //.el_r7{
+            //    display: none;
+            //}
+        }
+
+        &.mediterraneo  .elements{
+
+            //.el_l4,
+            //.el_l5,
+            //.el_l6,
+            //.el_r5,
+            //.el_r6,
+            //.el_r7,
+            //.el_r8,
+            //.el_r9{
+            //    display: none;
+            //}
+        }
+
+        &.garam_masala   .elements{
+            //.el_l5,
+            //.el_l6,
+            //.el_l7,
+            //.el_r6,
+            //.el_r7,
+            //.el_r8{
+            //    display: none;
+            //}
+        }
+    }
+
+    .home_main .product_circle .outer_circle .inner_circle .image_holder .product_circle_link{
+        .text{
+            font-size: 16px;
+            line-height: 18px;
+
+            small{
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+
+        &.fior_di_sale .text{
+            bottom: 30px;
+            right: -52px;
+        }
+    }
+
+    .home_main .product_circle .outer_circle .inner_circle .image_holder{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1280px){
+
+    .full_page_container{
+        padding: 0;
+    }
+
+    .home_main .product_item.mediterraneo .elements .el_l5{
+        display: none!important;
+    }
+
+    .home_main .product_item.pesto_basilico .elements .el_l6{
+        top: 39vh;
+    }
+
+    .home_main .product_item.pesto_basilico .elements .el_l11{
+        bottom: 16vh;
+        left:22vw;
+    }
+
+    .home_main .product_item.zenzero_limone .elements .el_r2,
+    .home_main .product_item.zenzero_limone .elements .el_r4{
+        display: none!important;
+    }
+
+    .home_main .product_item.zenzero_limone .elements .el_r6{
+        right: 16vw;
+    }
+
+    .home_main .product_item.zenzero_limone .elements .el_r7 img{
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    .home_main .product_item.carote_zenzero .elements .el_l4{
+        display: none!important;
+    }
+
+    .home_main .product_item.carote_zenzero .elements .el_l5{
+        bottom: 11vh;
+        left: 26vw;
+    }
+
+    .home_main .product_item.affumicato .elements .el_l4{
+        bottom: 42vh !important;
+    }
+
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_tofu_image img{
+        margin-left: 28.5%;
+    }
+}
+
+/*      height
+--------------*/
+@media (max-height: 1400px) {
+}
+
+@media (max-height: 1225px) {
+}
+
+@media (max-height: 1150px) {
+}
+
+@media (max-height: 1000px) {
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_image .imgholder .central_product_link{
+        padding-top: 80px;
+    }
+}
+
+@media (min-height: 651px) and (max-height: 800px) {
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_image .imgholder .central_product_link{
+        padding-top: 20px;
+    }
+}
+
+@media (min-height: 651px) and (max-height: 800px) {
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_image .imgholder .central_product_link{
+        padding-top: 36px;
+    }
+}
+
+@media (min-height: 501px) and (max-height: 700px) {
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_image .imgholder .central_product_link{
+        padding-top: 36px;
+    }
+}
+
+@media (max-height: 900px) and (max-width: 1440px) {
+    .home_main .product_item .inner_back_product .central_product .central_product_holder .product_image .imgholder{
+        bottom: auto;
+        max-width: 20%;
+        padding-left: 7%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+    }
+}
+
+@media (max-height: 760px) {
+    //.home_main .product_circle .outer_circle .inner_circle .image_holder{
+    //    transform: rotate(-5deg);
+    //
+    //    .product_circle_link{
+    //        transform: rotate(5deg);
+    //    }
+    //}
+
+    .home_main .product_circle{
+        transform: scale(0.8);
+        margin-top: 1.5vh;
+    }
+}
+
+#home_products .lang_sl{
+    &.carote_zenzero{
+        .elements{
+            .el_l4{
+                display: none;
+            }
+        }
+    }
+
+    &.zenzero_limone{
+        .elements{
+            .el_l5{
+                display: none;
+            }
+        }
+    }
+
+    &.garam_masala{
+        .elements{
+            .el_l6{
+                display: none;
+            }
+        }
+    }
+
+    &.fior_di_sale{
+        .elements{
+            .el_l6,
+            .el_l7{
+                display: none;
+            }
+        }
+    }
+
+    &.pesto_basilico{
+        .elements{
+            .el_l11{
+                display: none;
+            }
+        }
+    }
+
+    &.mediterraneo{
+        .elements{
+            .el_l6{
+                left: 26vw;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1441px){
+    .home_main footer .made-in{
+        right: 22px;
+        bottom: 55px;
+    }
+
+    #home_products .lang_sl{
+
+        &.mediterraneo{
+            .elements{
+                .el_l6{
+                    display: none;
+                }
+            }
+        }
+
+        &.pesto_basilico{
+            .elements{
+                .el_l9{
+                    display: none;
+                }
+            }
+        }
+
+        &.peperoncino{
+            .elements{
+                .el_l4{
+                    left: 24vw;
+                }
+            }
+        }
+    }
+}
